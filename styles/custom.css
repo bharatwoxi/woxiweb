@@ -1,3 +1,36 @@
 .main-page-header {
   font-size: 20px;
 }
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (orientation: landscape)  {
+
+    .intro-logo {
+      display: none;
+    }
+
+}
+
+@media only screen
+  and (min-device-width: 381px)
+  and (max-device-width: 640px)
+  and (orientation: landscape)  {
+
+    .intro-logo-image {
+      width: 20%;
+    }
+
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (orientation: portrait)  {
+
+    .intro-logo-image {
+      width: 30%;
+    }
+
+}
