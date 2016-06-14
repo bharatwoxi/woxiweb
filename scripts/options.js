@@ -44,7 +44,7 @@ require(['jquery', 'modernizr'], function() {
 						begin: function() {
 							loadingText.css({opacity: 1});
 						},
-						complete: function() { 
+						complete: function() {
 							increment++;
 							spanText.eq(i).velocity({opacity: 0}, {duration: 100});
 							if(increment === spanText.length) {
@@ -52,9 +52,9 @@ require(['jquery', 'modernizr'], function() {
 									visibility: 'visible',
 									duration: 200,
 									complete: function() {
-										body.removeAttr('data-preloader').addClass('dom-loaded');										
+										body.removeAttr('data-preloader').addClass('dom-loaded');
 									}
-								});							
+								});
 							}
 						}
 					});
@@ -71,10 +71,10 @@ require(['jquery', 'modernizr'], function() {
 		if(!(browser.msie && browser.version < 10)) {
 			var smoothOn = jQuery('#home').data('smooth-scroll');
 			if(smoothOn === 'on') {
-				require(['smooth-scroll']);	
-			}	
+				require(['smooth-scroll']);
+			}
 		}
-		
+
 
 		// Viewport actions
 		function viewportAction(selector, actions) {
@@ -146,7 +146,7 @@ require(['jquery', 'modernizr'], function() {
 						scrollEffect();
 						jQuery(window).scroll(function() {
 							scrollEffect();
-						});						
+						});
 					}
 
 
@@ -159,7 +159,7 @@ require(['jquery', 'modernizr'], function() {
 		var videoIframe = jQuery('iframe[src^="//player.vimeo.com"], iframe[src^="//www.youtube.com"]');
 		if(videoIframe.length) {
 			require(['fitvids'], function() {
-				jQuery('body').fitVids({ customSelector: 'iframe[src^="//player.vimeo.com"], iframe[src^="//www.youtube.com"]'});			
+				jQuery('body').fitVids({ customSelector: 'iframe[src^="//player.vimeo.com"], iframe[src^="//www.youtube.com"]'});
 			});
 		}
 
@@ -182,26 +182,26 @@ require(['jquery', 'modernizr'], function() {
 		// Count up
 		var factItems = jQuery('[data-count-up]');
 		if(factItems.length) {
-			require(['countup', 'velocity'], function() {			
+			require(['countup', 'velocity'], function() {
 
 				factItems.each(function(i) {
 					var factSingle = factItems.eq(i),
 						factSingleData = factItems.eq(i).data('count-up'),
 						//factSingleParent = factSingle.parents('li'),
 						options = {
-							useEasing : true, 
-							useGrouping : true, 
-							separator : '', 
+							useEasing : true,
+							useGrouping : true,
+							separator : '',
 							decimal : '',
 							prefix : '',
-							suffix : '' 
+							suffix : ''
 						};
 					viewportAction(factItems[i], function() {
 						var fact = new countUp(factSingle, 0, factSingleData, 0, 2+(i/2), options);
 						fact.start(function() {
 							//factSingleParent.velocity({ scale: 1.2 }, { loop: 1 });
 						});
-					});			
+					});
 
 				});
 			});
@@ -225,7 +225,7 @@ require(['jquery', 'modernizr'], function() {
 				viewportAction(devSlider[0], function() {
 					$('body').deviceSlider({
 						autoplay: true
-					});				
+					});
 				});
 			});
 		}
@@ -305,7 +305,7 @@ require(['jquery', 'modernizr'], function() {
 			require(['isotope', 'bridget', 'imagesloaded'], function(Isotope) {
 				portfolioMason.each(function(i) {
 					var folio = portfolioMason.eq(i),
-						masonrytarget = folio.data('masonry') || 'li';						
+						masonrytarget = folio.data('masonry') || 'li';
 					jQuery.bridget( 'isotope', Isotope );
 
 					setTimeout(function() {
@@ -317,10 +317,10 @@ require(['jquery', 'modernizr'], function() {
 								    pubDate: '[data-portfolio-date]',
 								    type: '[data-portfolio-type]'
 							 	}
-							});					
+							});
 						});
 					}, 500);
-					
+
 					// Portfolio filters
 					var portfolioFilters = jQuery('.portfolio-filters > ul > li');
 					if(portfolioFilters.length) {
@@ -357,13 +357,13 @@ require(['jquery', 'modernizr'], function() {
 				};
 
 				formInput.each(function() {
-					var input = $(this); 
+					var input = $(this);
 					var currentVal = input.val();
 					hasContent(input, currentVal);
 				});
 
 			formInput.blur(function() {
-				var input = $(this); 
+				var input = $(this);
 				var currentVal = input.val();
 				hasContent(input, currentVal);
 			});
@@ -387,20 +387,20 @@ require(['jquery', 'modernizr'], function() {
 						}
 					},
 					plots: {
-						'branch' : {
+						'head' : {
 							type : 'square',
 							size : 15,
-							latitude : 40.7033121, 
-							longitude: -73.979681,
+							latitude : 18.5204,
+							longitude: 73.8567,
 							attrs : {
 								fill : '#ee1d24',
 								transform: 'r45'
 							},
 							tooltip: {
-								content : '<i class="icon-316 font-2x"></i><p>Envato, 909 queen street newyork ny 33026</p> <p>1 234 567890 info@domain.com</p>',
+								content : '<i class="icon-316 font-2x"></i><p>WOXI SOFTWARE LLP, 5th Floor, Opposite Vanaz Industry, Nirmal Plaza, Paud Rd, Lokmanya Colony, Kothrud, Pune, Maharashtra 411038 </p><p>Mr Sandeep Patil</p> <p>+91 997 001 4607</p>',
 							},
 							text : {
-									content : 'Branch office',
+									content : 'Head office',
 									attrs : {
 										fill : '#000000'
 									},
@@ -410,18 +410,18 @@ require(['jquery', 'modernizr'], function() {
 							}
 						},
 
-						'head' : {
+						'branch' : {
 							type : 'square',
 							size : 15,
-							latitude : -37.8602828, 
-							longitude: 145.079616,
+							latitude : 37.368832,
+							longitude: -122.036346,
 							attrs : {
 								fill : '#ee1d24',
 								transform: 'r45'
 							},
-							tooltip: {content : '<i class="icon-316 font-2x"></i><p>Envato, 121 king street melbourne vic 3000</p> <p>1 234 567890 info@domain.com</p>'},
+							tooltip: {content : '<i class="icon-316 font-2x"></i><p>WOXI SOFTWARE LLP, 325 South Bernardo Avenue, Sunnyvale, CA 94086 USA</p><p>Mr Aneesh Mulye</p> <p>+1 404 576-8590</p>'},
 							text : {
-									content : 'Head office',
+									content : 'Branch office',
 									attrs : {
 										fill : '#000000'
 									},
@@ -530,8 +530,8 @@ require(['jquery', 'modernizr'], function() {
 						stickyMenu.removeClass('is-sticky');
 					}
 				}
-				
-				lastScroll = st;				
+
+				lastScroll = st;
 			});
 		}
 
@@ -587,7 +587,7 @@ require(['jquery', 'modernizr'], function() {
 				});
 
 			});
-			
+
 		}
 
 		// Mobile menu
